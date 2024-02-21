@@ -1,0 +1,1 @@
+Welcome to my Recipe App, built using the Django framework. This app allows you to create and upload your own custom recipes, and access those recipes later. You'll be able to update information for recipes previously created or delete recipes entirely as well.
