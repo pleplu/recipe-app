@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Details</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div style="font-family: monospace; text-align: center; font-size: 24px;">
+            <h2>Name: {{object.name}}</h2>
+        
+            <b>Ingredients: </b> {{object.ingredients}} <br>
+        
+            <b>Cooking Time (min): </b> {{object.cooking_time}} <br>
+        
+            <b>Difficulty: </b> {{object.calculate_difficulty}} <br><br>
+        
+            <img src="{{object.pic.url}}" width="256" height="256" />
+        </div>
+    </body>
+</html>

@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-   <title>
-       Recipe App Home
-   </title>
-   <body>
-       Welcome to my Recipe App
-   </body>
+    <head>
+        <title>Recipe App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+    </head>
+
+    <body>
+        <div style="text-align: center; margin-top: 40px; font-family: monospace;">
+            <h1 style="font-size: 48px;">Welcome to my Recipe App</h1>
+            <img src="{% static 'recipes/images/tea.webp' %}" alt="home" width="900" height="600">
+        </div>
+    </body>
 </html>

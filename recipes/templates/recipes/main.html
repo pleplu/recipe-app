@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Recipes List</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body style="font-family: monospace; text-align: center;">
+
+        <h1 style="font-size: 48px;">Recipes List</h1>     
+
+        <table border="4" cellpadding="10" style="font-size: 24px; margin-right: auto; margin-left: auto; width: 350px;">
+            <tr>
+                <td>Recipes</td> 
+            </tr>
+
+            {% for object in object_list %} 
+            <tr>
+
+                <td>
+                    {{object.name}} 
+                    <br>
+                    <a href ="{{object.get_absolute_url}}"><img src="{{object.pic.url}}" width="200" height="200" /></a>
+                </td>
+     
+            </tr>
+            {% endfor %}
+        </table>
+
+    </body>
+</html>
