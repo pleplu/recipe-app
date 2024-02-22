@@ -15,7 +15,9 @@
         
             <b>Difficulty: </b> {{object.calculate_difficulty}} <br><br>
         
-            <img src="{{object.pic.url}}" width="256" height="256" />
+            <img src="{{object.pic.url}}" width="256" height="256" border="2" />
+            <br><br>
+            <a href="{%url 'recipes:list' %}">Back</a>
         </div>
     </body>
 </html>

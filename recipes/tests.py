@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Recipe
+from .forms import RecipesSearchForm
 
 # Create your tests here.
 
@@ -32,3 +33,14 @@ class RecipeModelTest(TestCase):
        #get_absolute_url() should take you to the detail page of book #1
        #and load the URL /books/list/1
        self.assertEqual(recipe.get_absolute_url(), '/list/1')
+
+class RecipesSearchFormTest(TestCase):
+
+    def test_renders_chart_type(self):
+        form = RecipesSearchForm()
+        self.assertIn('chart_type', form.as_p())
+
+    def test_valid_data(self):
+        form = RecipesSearchForm(
+            data={'recipe_name': 'Tea', 'chart_type': '#2'})
+        self.assertTrue(form.is_valid())

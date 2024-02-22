@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recipe Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body style="background-color: whitesmoke;">
+        <div style="font-family: monospace; text-align: center;">
+            <h1 style="font-size: 48px; text-decoration: underline;">Search for a recipe</h1>
+
+            <form style="font-size: 24px;" action="" method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit">Search</button>
+            </form>
+
+            <br><br>
+            <div style="width: 600px; margin: auto;">
+                {% if recipe_df %}
+                {{recipe_df|safe}}
+            </div>
+            <br>
+            <img src="data:image/png;base64, {{chart|safe}}">
+            {% else %}
+            <p style="font-size: 24px;">no data</p>
+            {% endif %}
+            <br><br>
+
+            <a style="font-size: 24px;" href="{%url 'recipes:list' %}">Back</a>
+        </div>
+    </body>
+</html>
