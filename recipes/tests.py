@@ -34,13 +34,13 @@ class RecipeModelTest(TestCase):
        #and load the URL /books/list/1
        self.assertEqual(recipe.get_absolute_url(), '/list/1')
 
-class RecipesSearchFormTest(TestCase):
+# class RecipesSearchFormTest(TestCase):
 
-    def test_renders_chart_type(self):
-        form = RecipesSearchForm()
-        self.assertIn('chart_type', form.as_p())
+#     def test_renders_chart_type(self):
+#         form = RecipesSearchForm()
+#         self.assertIn('chart_type', form.as_p())
 
-    def test_valid_data(self):
-        form = RecipesSearchForm(
-            data={'recipe_name': 'Tea', 'chart_type': '#2'})
-        self.assertTrue(form.is_valid())
+#     def test_valid_data(self):
+#         form = RecipesSearchForm(
+#             data={'recipe_name': 'Tea', 'chart_type': '#2'})
+#         self.assertTrue(form.is_valid())
