@@ -11,10 +11,27 @@
     <body style="background-color: whitesmoke;">
         <div style="font-family: monospace; text-align: center; margin-top: 40px;">
 
-            <h1 style="font-size: 48px; margin-bottom: 15px; text-decoration: underline;">Recipes List</h1>     
+            <h1 style="font-size: 48px; margin-bottom: 15px; text-decoration: underline;">Recipes List</h1>   
+            
+            <div>
+                <form action="" method="GET">
+                    {% csrf_token %}
+                    <input type="text" name="recipe_search" class="form_search_input" id="searchbar" placeholder="Search for a Reecipe" onkeyup="search_recipe()" />
+                </form>
+                <br>
+                <div class="search_results" style="display: none;">
+                    {% for object in object_list %}
+                    <p class="recipe_searched" style="font-size: 24px; margin-top: -10px;"><a class="recipe_name" href="{{object.get_absolute_url}}">{{object.name}}</a></p>
+                    {% endfor %}
+                </div>
+            </div>
 
             <div style="font-size: 24px;">
-                <a href="{%url 'recipes:search' %}" class="logout_btn">Search for a recipe</a>
+                <a href="{%url 'recipes:search' %}" class="logout_btn">See Recipe Data</a>
+            </div>
+            <br>
+            <div style="font-size: 24px;">
+                <a href ="{%url 'recipes:about_me' %}">About Me</a>
             </div>
             <br>
             <div style="font-size: 24px;">
@@ -32,5 +49,6 @@
                 {% endfor %}
             </div>
         </div>
+        <script src="{% static 'recipes/main.js' %}"></script>
     </body>
 </html>

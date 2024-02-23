@@ -14,6 +14,9 @@ from .utils import get_recipe_name_from_id, get_chart
 def home(request):
    return render(request, 'recipes/home.html')
 
+def about_me(request):
+   return render(request, 'recipes/about_me.html')
+
 class RecipeListView(LoginRequiredMixin, ListView):   #class-based view
    model = Recipe                       #specify model
    template_name = 'recipes/main.html'  #specify template 
